@@ -1,0 +1,16 @@
+<%- include('./partials/header', {title: "Edit Campground"}) %>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading text-center">ERROR <%= err.status %></h4>
+          <h5 class="alert-heading text-center"><%= err.message %></h5>
+          <% if (process.env.NODE_ENV !== "production") { %>
+            <hr>
+              <p><%= err.stack %></p>
+          <% } %>
+          </div>
+    </div>
+</div>
+
+  <%- include('./partials/footer') %>    

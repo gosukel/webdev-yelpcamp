@@ -1,0 +1,41 @@
+<%- include('../partials/header', {title: "Register"}) %>
+
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div class="row flex-fill">
+        <div class="col-8 offset-2 col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1618932747930-e574556cb339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHwyMDQzMTQ1Nnx8fHx8fHwxNjk3MTcwNTQy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">New User</h5>
+                    <form action="/auth/register" method="post" class="needs-validated" novalidate>
+                        <div class="mb-3">
+                            <label for="newUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="user[newUsername]" id="newUsername" autofocus required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="user[newPassword]" id="newPassword" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="user[newEmail]" id="newEmail" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success mb-3 mt-1">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('../partials/footer') %>

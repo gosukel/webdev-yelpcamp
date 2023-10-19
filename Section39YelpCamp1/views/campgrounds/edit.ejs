@@ -1,0 +1,66 @@
+<%- include('../partials/header', {title: "Edit Campground"}) %>
+
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div class="row flex-fill">
+        <div class="col-8 offset-2">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Edit Campground</h3>
+                    <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="post" class="needs-validated" enctype="multipart/form-data" novalidate>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" name="campground[title]" id="title" value="<%= camp.title %>" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="campground[location]" id="location" value="<%= camp.location %>" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea type="text" rows="4" class="form-control" name="campground[description]" id="description"  required><%= camp.description %></textarea>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Campground Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" name="campground[price]" id="price" value="<%= camp.price %>" required>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imageFile" class="mb-2">Add Images</label>
+                            <br>
+                            <div class="input-group">
+                                <input type="file" class="form-control" name="campground[image]" id="imageFile" multiple>
+                            </div>  
+                        </div>
+                        <div class="mb-3">
+                            <% camp.images.forEach((img, i) => { %>
+                                <div class="mb-2">
+                                    <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+                                    <div>
+                                        <div class="form-check-inline">
+                                            <input type="checkbox" name="deleteImages[]" value="<%= img.filename %>" id="image-<%= i %>">
+                                        </div>
+                                        <label for="image-<%= i %>">Delete?</label>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="d-grid gap-2">
+
+                            <button type="submit" class="btn btn-success mb-3 mt-2">Update Campground</button>
+                        </div>
+                        <a class="btn btn-danger" href="/campgrounds/<%= camp._id %>">Back to Campground</a>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+
+<%- include('../partials/footer') %>    

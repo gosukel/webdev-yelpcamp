@@ -1,0 +1,36 @@
+<%- include('../partials/header', {title: "Login"}) %>
+
+<div class="container d-flex justify-content-center align-items-center my-5">
+    <div class="row flex-fill">
+        <div class="col-8 offset-2 col-md-6 offset-md-3">
+            <div class="card shadow">
+                <img class="card-img-top" src="https://images.unsplash.com/photo-1606801249327-2fa0ec346b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHwyMDQzMTQ1Nnx8fHx8fHwxNjk3MTY5ODM3&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h3>
+                    <form action="/auth/login" method="post" class="needs-validated" novalidate>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" id="username" autofocus required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success mb-3 mt-3">Login</button>
+
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include('../partials/footer') %>
